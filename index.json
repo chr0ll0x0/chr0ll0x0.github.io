@@ -1,0 +1,28 @@
+
+{
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    "articles": [{"date":"2023-11-03","image":"","imageAlt":"","link":"https://chr0ll0x0.github.io/posts/first-post/","summary":"this is a test","tags":[],"title":"First Post"},{"date":"0001-01-01","image":"","imageAlt":"","link":"https://chr0ll0x0.github.io/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"https://chr0ll0x0.github.io/search/","summary":"","tags":[],"title":"Search"}],
+    "test": "First Post   Manifest   Search   ",
+    "page": "1",
+    "next": ""
+}
+
