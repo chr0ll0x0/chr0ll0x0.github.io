@@ -197,7 +197,7 @@
     
     <div><h1 id="baby-vulnlab">Baby (VulnLab)</h1>
 <p>Walkthrough by Chr0ll0 (LDAP Enumeration, SMB Password Spraying, Change Password over SMB, Privilege escalation using SeBackupPrivilege and SeRestorePrivilege)</p>
-<p><img src="https://cdn.discordapp.com/attachments/909723295379750982/1097079082753200149/baby_slide.png" alt="N|Solid"></p>
+<p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/baby_slide.png" alt="N|Solid"></p>
 <h2 id="machine-information">Machine information</h2>
 <p>Hostname: BabyDC.baby.vl</p>
 <p>Domain: baby</p>
@@ -294,10 +294,10 @@
 </span></span><span style="display:flex;"><span>dSCorePropagationData: 16010101000416.0Z
 </span></span><span style="display:flex;"><span>msDS-SupportedEncryptionTypes: <span style="color:#ae81ff">0</span>
 </span></span></code></pre></div><p>Let&rsquo;s try to Test creds with smb or ldap <code>teresa.bell:********</code> password was not working for this user.</p>
-<p><img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170417646878073014/Screenshot_2023-11-04_at_18.39.13.png" alt="alt text"></p>
+<p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2023-11-04_at_18.39.13.png" alt="alt text"></p>
 <p>However those don&rsquo;t seem to be the correct credentials for that user, but we can Test this password associated with another account. First let&rsquo;s retrieve all users from ldap.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapsearch -H ldap://10.10.109.97 -x -b <span style="color:#e6db74">&#39;DC=baby,DC=vl&#39;</span>  | grep userPrincipalName | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f2 | cut -d <span style="color:#e6db74">&#39;@&#39;</span> -f1
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170413456520921168/Screenshot_2023-11-04_at_18.25.04.png" alt="alt text"></p>
+</span></span></code></pre></div><p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2023-11-04_at_18.25.04.png" alt="alt text"></p>
 <p>Save this result as userslist.</p>
 <h1 id="users">Users</h1>
 <pre tabindex="0"><code>Jacqueline.Barnett
@@ -310,22 +310,22 @@ Kerry.Wilson
 Teresa.Bell
 </code></pre><p><a href="https://viperone.gitbook.io/pentest-everything/everything/everything-active-directory/credential-access/brute-force/password-spraying">Password spray</a></p>
 <p>So our next plan is to create file with the usernames and try them.</p>
-<p><img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170418915667607613/Screenshot_2023-11-04_at_18.45.30.png" alt="alt text"></p>
+<p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2023-11-04_at_18.45.30.png" alt="alt text"></p>
 <p>However, I tried password spray, but didn&rsquo;t work. Lets see what&rsquo;s wrong, When We returned to result of ldapsearch, I noticed the user was missing, but when we grep with <code>distinguished name (usually just shortened to 'DN')</code>, and match first userlist with second userlist, we found interesting users.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapsearch -H ldap://10.10.72.85 -x -b <span style="color:#e6db74">&#39;DC=baby,DC=vl&#39;</span>  | grep <span style="color:#e6db74">&#34;dn&#34;</span> | cut -d <span style="color:#e6db74">&#34;=&#34;</span>  -f2 | cut -d <span style="color:#e6db74">&#34;,&#34;</span> -f1 | tail | tr <span style="color:#e6db74">&#34; &#34;</span> . |tee users2
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diff users1.txt users2.txt
-</span></span></code></pre></div><p><img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170442816611168276/Screenshot_2023-11-04_at_20.21.40.png" alt="alt text"></p>
+</span></span></code></pre></div><p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2023-11-04_at_20.21.40.png" alt="alt text"></p>
 <pre tabindex="0"><code>Ian.Walker
 Caroline.Robinson
 </code></pre><p>Let&rsquo;s add this users to userlist and try again.</p>
-<p><img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170447020482371644/Screenshot_2023-11-04_at_20.34.00.png" alt="alt text"></p>
+<p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2023-11-04_at_20.34.00.png" alt="alt text"></p>
 <p>B0000M, We can see an account <code>Caroline.Robinson</code> whose password must be changed.</p>
 <h1 id="change-password-over-smb">Change Password over SMB</h1>
 <p>There is a user <code>Caroline.Robinson</code> with an expired password <code>******</code>. When trying to connect to an SMB we see <a href="https://www.n00py.io/2021/09/resetting-expired-passwords-remotely">STATUS_PASSWORD_MUST_CHANGE</a>, error is raised.
 One way to get out of this situation remotely from Linux is to use this <code>smbpasswd</code> tool.</p>
-<p><img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170452065953263736/Screenshot_2023-11-04_at_20.58.11.png" alt="alt text"></p>
+<p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2023-11-04_at_20.58.11.png" alt="alt text"></p>
 <p>after that, we just need to log in to the machine using <code>evil-winrm</code>.</p>
-<p><img src="https://cdn.discordapp.com/attachments/1170410199253786674/1170453366736961716/Screenshot_2023-11-04_at_21.02.42.png" alt="alt text"></p>
+<p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2023-11-04_at_21.02.42.png" alt="alt text"></p>
 <h1 id="enumerating">Enumerating</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>whoami /all
 </span></span></code></pre></div></div>
