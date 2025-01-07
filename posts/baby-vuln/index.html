@@ -310,7 +310,7 @@ Kerry.Wilson
 Teresa.Bell
 </code></pre><p><a href="https://viperone.gitbook.io/pentest-everything/everything/everything-active-directory/credential-access/brute-force/password-spraying">Password spray</a></p>
 <p>So our next plan is to create file with the usernames and try them.</p>
-<p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2023-11-04_at_18.45.30.png" alt="alt text"></p>
+<p><img src="https://chr0ll0x0.github.io/images/vulnlab/baby/Screenshot_2025-11-04_at_18.45.30.png" alt="alt text"></p>
 <p>However, I tried password spray, but didn&rsquo;t work. Lets see what&rsquo;s wrong, When We returned to result of ldapsearch, I noticed the user was missing, but when we grep with <code>distinguished name (usually just shortened to 'DN')</code>, and match first userlist with second userlist, we found interesting users.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ldapsearch -H ldap://10.10.72.85 -x -b <span style="color:#e6db74">&#39;DC=baby,DC=vl&#39;</span>  | grep <span style="color:#e6db74">&#34;dn&#34;</span> | cut -d <span style="color:#e6db74">&#34;=&#34;</span>  -f2 | cut -d <span style="color:#e6db74">&#34;,&#34;</span> -f1 | tail | tr <span style="color:#e6db74">&#34; &#34;</span> . |tee users2
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diff users1.txt users2.txt
@@ -340,7 +340,7 @@ One way to get out of this situation remotely from Linux is to use this <code>sm
     <hr />
 
 <p><small>
-        2023 &copy; 
+        2025 &copy; 
     </small></p>
     <p><small>
         
